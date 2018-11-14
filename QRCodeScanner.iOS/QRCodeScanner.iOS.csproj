@@ -95,6 +95,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\QrScanningService.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -152,6 +153,9 @@
     <PackageReference Include="ZXing.Net.Mobile">
       <Version>2.4.1</Version>
     </PackageReference>
+    <PackageReference Include="ZXing.Net.Mobile.Forms">
+      <Version>2.4.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -159,5 +163,12 @@
       <Project>{DB66A545-1725-43F0-B046-FAA3950DD0FB}</Project>
       <Name>QRCodeScanner</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QRCodeScanner.Android\QRCodeScanner.Android.csproj">
+      <Project>{E6609C3E-47CA-41BE-B906-339063EA6E1F}</Project>
+      <Name>QRCodeScanner.Android</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

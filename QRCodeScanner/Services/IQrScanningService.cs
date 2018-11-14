@@ -2,7 +2,7 @@
 
 namespace QRCodeScanner.Services
 {
-    interface IQrScanningService
+    public interface IQrScanningService
     {
         Task<string> ScanAsync();
     }

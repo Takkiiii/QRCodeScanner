@@ -9,12 +9,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using XFBarcode.Services;
 using ZXing.Mobile;
 using Xamarin.Forms;
+using QRCodeScanner.Services;
 
-[assembly: Dependency(typeof(XFBarcode.Droid.Services.QrScanningService))]
-namespace QR_Code_Scanner.Droid.Services
+[assembly: Dependency(typeof(QRCodeScanner.Droid.Services.QrScanningService))]
+namespace QRCodeScanner.Droid.Services
 {
     public class QrScanningService : IQrScanningService
     {

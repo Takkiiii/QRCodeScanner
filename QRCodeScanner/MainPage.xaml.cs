@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace QRCodeScanner
 {
@@ -13,9 +14,10 @@ namespace QRCodeScanner
         public MainPage()
         {
             InitializeComponent();
+            On<Xamarin.Forms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
 
-        private async void btnScan_Clicked(object sender, EventArgs e)
+        private async void ScanAsync(object sender, EventArgs e)
         {
             try
             {
@@ -23,13 +25,12 @@ namespace QRCodeScanner
                 var result = await scanner.ScanAsync();
                 if (result != null)
                 {
-                    txtBarcode.Text = result;
+                    Barcode.Text = result;
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
     }

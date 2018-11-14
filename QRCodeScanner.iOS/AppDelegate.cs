@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
 
@@ -23,8 +22,8 @@ namespace QRCodeScanner.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            global::ZXing.Net.Mobile.Forms.iOS.Platform.Init(); // <- これ
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }
